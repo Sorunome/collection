@@ -1,0 +1,283 @@
+/*
+z-indexes:
+
+10 - cat hint
+
+
+*/
+
+* {
+	padding:0;
+	margin:0;
+}
+
+body {
+	background:
+		linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+		linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+		linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+		linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+		linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+		linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	background-color: #131313;
+	background-size: 20px 20px;
+	font-size:12pt;
+	font-family:"Verdana","arial","Helvetica",sans-serif;
+}
+
+article,footer,header {
+	width:95%;
+	margin:10px auto 0;
+	background-color:white;
+	padding:5px;
+	border:1px solid black;
+	border-radius:5px;
+}
+
+.categoryList {
+	list-style-type:none;
+}
+.categoryList > li {
+	margin:0 5px;
+}
+#categories > .categoryList > li {
+	float:left;
+	border:1px solid black;
+	border-radius:4px;
+	font-size:14px;
+	color:#FFFFFF;
+	background-color:#D3B747;
+	padding:0 3px;
+}
+#categories > .categoryList > li a {
+	border:none;
+	text-decoration:none;
+	
+}
+#categories > .categoryList > li .categoryRemoveButton {
+	color:#FF0000;
+	font-size:10px;
+	margin-left:5px;
+	cursor:pointer;
+}
+#categories > .categoryList > li .categoryRemoveButton:hover {
+	font-weight:bolder;
+	margin-left:5px;
+}
+#categoriesCont {
+	border-top:1px solid black;
+}
+
+.objectTable {
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+#categories .acceptButton {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	padding:0;
+	margin:0;
+	background:url(buttons_small.png) no-repeat scroll 0px 0px;
+	cursor:pointer;
+	position:relative;
+	top:4px;
+	left:2px;
+}
+#categories .cancleButton {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	padding:0;
+	margin:0;
+	background:url(buttons_small.png) no-repeat scroll -16px -16px;
+	cursor:pointer;
+	position:relative;
+	top:4px;
+	left:4px;
+}
+#categories .catHint {
+	display:inline-block;
+	position:absolute;
+}
+#categories .catHint > ul {
+	position:relative;
+	left:-130px;
+	top:20px;
+	list-style-type:none;
+	border:1px solid black;
+	border-radius:5px;
+	background-color:#D8AD00;
+	border-collapse:collapse;
+	z-index:10;
+}
+#categories .catHint > ul > li {
+	border-collapse:collapse;
+	border-bottom:1px solid black;
+	cursor:pointer;
+}
+#categories .catHint > ul > li:hover {
+	background-color:#FFCB00;
+}
+#categories input.invalidCat {
+	color:#FF0000;
+}
+
+footer {
+	text-align:center;
+}
+
+#searchForm{
+	float:right;
+}
+
+header {
+	border-bottom:1px solid black;
+	padding:5px;
+}
+nav {
+	display:inline-block;
+}
+nav a {
+	border: 1px solid black;
+	border-collapse:collapse;
+	padding:3px;
+	background-color:#F9D854;
+	cursor:pointer;
+	text-decoration:none;
+	color:black;
+}
+
+.catName {
+	font-size:25px;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.catButtons {
+	font-size:12px;
+	margin-left:10px;
+}
+.delCatButton[data-catid="1"] {
+	display:none;
+}
+
+.invalid {
+	color:#FF0000;
+}
+
+
+#icons {
+	background-color:white;
+	position:fixed;
+	bottom:3px;
+	right:95px;
+	z-index:45;
+	line-height:16px;
+	margin:5px;
+	border:1px solid black;
+	border-radius:5px;
+	vertical-align:middle;
+}
+#warnings > .icon {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	padding:0;
+	margin:0 0 0 2px;
+	background:url(icons.png) no-repeat scroll -17px 0px;
+	cursor:pointer;
+}
+#errors > .icon {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	padding:0;
+	margin:0 0 0 2px;
+	background:url(icons.png) no-repeat scroll -34px 0px;
+	cursor:pointer;
+}
+.errorPopup {
+	background-color:#FFFFFF;
+	z-index:50;
+	position:absolute;
+	top:0;
+	left:0;
+	padding:5;
+	border:1px solid black;
+	overflow:auto;
+	height:calc(100% - 2px);
+}
+#uploadForm,#listFiles {
+	display:none;
+	position:fixed;
+	z-index:50;
+	top:100px;
+	left:0px;
+	width:100%;
+}
+div.ajax-upload-dragdrop {
+	color:black;
+}
+#uploadForm_cont,#listFiles_cont {
+	background-color:#D8D882;
+	width:550px;
+	margin:0px auto;
+	padding:5px;
+	border:1px solid black;
+	border-radius:5px;
+}
+#uploadForm_cont_inner,#listFiles_real {
+	width:524px;
+	margin:0 auto;
+}
+#uploadForm_close,#listFiles_close {
+	float:right;
+	font-weight:bold;
+	color:red;
+	cursor:pointer;
+}
+#listFiles_preview {
+	max-width:400px;
+	max-height:400px;
+	display:none;
+	position:fixed;
+	z-index:51;
+	top:0;
+	right:0;
+	background-color:#323232;
+	border:1px solid black;
+	border-radius:10px;
+}
+.listFiles_item {
+	cursor:pointer;
+}
+
+.objectTable {
+	background-color:#E1E590;
+	border-spacing:0;
+}
+
+.objectTable tr:nth-child(even) {
+	background-color:#BABF5B;
+}
+.objectTable tr > * {
+	border-right:1px dashed black;
+}
+.objectTable tr > *:last-child {
+	border-right-style:none;
+}
+.objectTable tr > * {
+	padding:2px;
+}
+
+
+#copyright {
+	font-size:10px;
+}
+
+.cattree {
+	font-size:14px;
+	margin-bottom:6px;
+}
